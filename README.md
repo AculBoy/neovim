@@ -1,2 +1,4 @@
-# NEOVIM
-This repository contains my current neovim configuration. I used the [kickstarter-nvim](https://github.com/nvim-lua/kickstart.nvim) project to set these configs up and I recommend you do to because it really helps to understand how does configs work.
+# Neovim Configuration
+
+This repository contains my current Neovim configuration.
+I used the [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) project to tailor my configuration to my liking, and I recommend you do the same because it really helps in understanding how configurations work.
