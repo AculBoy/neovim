@@ -94,7 +94,6 @@ return {
             },
           },
         },
-        checkstyle = {},
       }
 
       require('mason').setup()
