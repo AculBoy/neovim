@@ -28,7 +28,7 @@ return {
       pcall(require('telescope').load_extension, 'ui-select')
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
-      vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
+      vim.keymap.set('n', '<leader>fH', builtin.help_tags, { desc = '[F]ind [H]elp' })
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
       vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
@@ -44,6 +44,13 @@ return {
           previewer = false,
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
+      -- Search Home dir
+      vim.keymap.set('n', '<leader>fh', function()
+        builtin.find_files {
+          cwd = vim.fn.expand '~',
+          prompt_title = 'Find files in $HOME',
+        }
+      end, { desc = '[F]ind files at [H]ome' })
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
       vim.keymap.set('n', '<leader>f/', function()
@@ -54,8 +61,19 @@ return {
       end, { desc = '[F]ind [/] in Open Files' })
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>fn', function()
-        builtin.find_files { cwd = vim.fn.stdpath 'config' }
+        builtin.find_files {
+          cwd = vim.fn.stdpath 'config',
+          prompt_title = 'Find Neovim configuration files',
+        }
       end, { desc = '[F]ind [N]eovim files' })
+      -- Shortcut for searching your configuration folder
+      vim.keymap.set('n', '<leader>fc', function()
+        builtin.find_files {
+          cwd = vim.fn.expand '~/.config',
+          hidden = true,
+          prompt_title = 'Find Files in .config',
+        }
+      end, { desc = '[F]ind [C]onfiguration files' })
     end,
   },
 }

@@ -11,6 +11,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- automatically change pwd when opening a new file / buffer
+vim.opt.autochdir = true
+
 -- set indent level
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
