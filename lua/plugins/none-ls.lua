@@ -6,7 +6,7 @@ return {
       sources = {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.diagnostics.checkstyle.with {
-          extra_args = { '-c', '/home/lucag/Documents/programmieren/assignment2/checkstyle-sheet2.xml' },
+          extra_args = { '-c', '/home/lucag/Documents/programmieren/assignment3/checkstyle-sheet3.xml' },
         },
       },
     }
