@@ -5,4 +5,4 @@ require 'pkgmgr'
 require 'keymaps'
 
 -- set colorscheme
-vim.cmd.colorscheme 'pywal'
+-- vim.cmd.colorscheme 'pywal'
